@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Veri Yükle{% endblock %}
+{% block content %}
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">CSV / Excel Yükle</h4>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="form-group">{{ form.importer.label_tag }} {{ form.importer }}</div>
+      <div class="form-group">{{ form.kind.label_tag }} {{ form.kind }}</div>
+      <div class="form-group">{{ form.sheet.label_tag }} {{ form.sheet }}</div>
+      <div class="form-group">{{ form.file.label_tag }} {{ form.file }}</div>
+      <button class="btn btn-primary">Yükle</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
+
